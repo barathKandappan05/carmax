@@ -261,8 +261,8 @@
             console.log(e.data.action)
         } else if (e.data.action.includes("change")) {
             let clientLink = document.getElementById('originalFrame')
+            console.log(`Recieve Action ${e.data.action} to ${e.data.toUrl}`);
             clientLink.src = e.data.toUrl;
-            console.log(e.data.action)
         } else if(e.data.action.includes("resend")){
             var receiverElem = document.getElementById('receiver').contentWindow;
             receiverElem.postMessage({"actionType": 'ameliaConversationAttributes', "actionData": {"test": 'testing some stuff'}}, chatUrl);
